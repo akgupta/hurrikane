@@ -20,8 +20,8 @@ $ activator run
 $ open "http://localhost:9000"
 ```
 ### Acknowledgements
-Derived work from the following Open Source Software
-sse-perf
-https://github.com/matthiasn/sse-perf
-Copyright © 2013 Matthias Nehlsen
-License: Apache License Version 2.0
+Derived work from the following Open Source Software  
+sse-perf  
+https://github.com/matthiasn/sse-perf  
+Copyright © 2013 Matthias Nehlsen  
+License: Apache License Version 2.0  

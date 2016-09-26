@@ -1,4 +1,4 @@
-name := "sse_benchmark"
+name := "hurrikane"
 
 version := "1.0-SNAPSHOT"
 
