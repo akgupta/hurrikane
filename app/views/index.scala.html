@@ -1,0 +1,57 @@
+@(message: String)
+
+  @main("Hurrikane: Benchmark Server Sent Events") {
+
+    <h1>Hurrikane: Benchmark Server Sent Events</h1>
+
+    <p>This utility can consume Server Sent Events from an endpoint with multiple concurrent connections and dynamically update metrics on client connections, consumed chunks and rate of data consumption.</p>
+
+    <hr>
+
+    <div id="actionButtons">
+      <p>Specify a URL that is the endpoint on the server that produces Server Sent Events. Specify the number of client connections you wish to add on this endpoint.</p>
+      <b>SSE Url</b> <input type="text" name="url" id="url" value="" /> <br/>
+      <h2>Add Clients</h2>
+      <b>Number of Clients</b> <input type="text" name="number" id="number" value="" /> <br/>
+      <br/>
+      <button type="button" onclick="addClientsHandler()">Add</button><br/>
+      <br/>
+      <b>OR</b><br />
+      <br />
+      <b>Add</b> <input id="rampCount" value="50"/><b> clients every </b>
+      <input id="rampInterval" value="3"/><b> seconds.</b> <br />
+      <br />
+      <button id="rampButton" onclick="ramp()">Ramp</button>
+      <button id="stopRampButton" onclick="stopRamp()">Stop Ramp</button> <br/>
+
+      <h2>Remove All Clients</h2>
+      <button type="button" onclick="removeAllClients()">Stop</button> <br/>
+    </div>
+
+    <hr>
+
+    <div id="metricsText">
+      <h2>Dynamic Metrics</h2>
+      <b>Active Clients:</b> <span class="metricVal" id="activeClients">0</span><br />
+      <i>Number of clients that are actively receiving data from the server</i><br />
+      <b>Chunks/s:</b> <span class="metricVal" id="chunksPerSec">0</span><br />
+      <i>Rate of chunks received over all active clients</i><br />
+      <b>KB/s:</b> <span class="metricVal" id="kbPerSec"></span><br />
+      <i>Rate of data received over all active clients</i><br />
+      <br />
+      <b>Total Clients:</b> <span class="metricVal" id="totalClients">0</span><br />
+      <i>Number of clients that have an open connection with the server</i><br />
+      <b>Connection Errors:</b> <span class="metricVal" id="connectionErrors">0</span><br />
+      <i>Number of clients that could not open a connection to the server and thus, not added to the pool of clients</i><br />
+      <b>Total Chunks:</b> <span class="metricVal" id="totalChunks">0</span><br />
+      <i>Total number of chunks received in this session over all clients</i><br />
+      <b>Total MB:</b> <span class="metricVal" id="totalMB"></span><br />
+      <i>Total data received in this session over all clients</i><br />
+    </div>
+
+    <hr>
+
+    <h3>Events Received:</h3>
+    <div id="messages"> </div>
+
+  }
