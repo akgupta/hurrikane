@@ -23,3 +23,9 @@ $ open "http://localhost:9000"
 ### Author
 [Akhilesh Gupta](https://www.linkedin.com/in/guptaakhilesh)
 
+### Acknowledgements
+Derived work from the following Open Source Software  
+sse-perf  
+https://github.com/matthiasn/sse-perf  
+Copyright © 2013 Matthias Nehlsen  
+License: Apache License Version 2.0  
